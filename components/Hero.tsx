@@ -1,34 +1,41 @@
+"use client";
 import Image from "next/image";
 
 export default function Hero() {
   return (
-    <section className="relative w-full min-h-[90vh] flex items-center justify-center">
-      {/* Fondo absoluto */}
-      <div className="absolute inset-0">
-        <Image
-          src="/hero.png"
-          alt="IO Red - Desarrollo de software"
-          fill
-          priority
-          className="object-cover z-0"
-        />
-        <div className="absolute inset-0 bg-black/65 z-10" />
-      </div>
+    <section className="w-full bg-background px-4 md:px-8 py-20 md:py-32">
+      <div className="max-w-7xl mx-auto flex flex-col-reverse md:flex-row items-center justify-between gap-12">
+        
+        {/* Texto Izquierda */}
+        <div className="flex-1 text-center md:text-left">
+          <h1 className="text-4xl md:text-6xl font-bold font-sans text-foreground mb-6">
+            Desarrollo de Software a Medida
+          </h1>
+          <p className="text-lg md:text-xl text-brand-muted mb-8">
+            Creamos aplicaciones web y software a medida para empresas que buscan soluciones tecnológicas sólidas y escalables.  
+            Potenciá tu negocio con nuestra experiencia en desarrollo full stack.
+          </p>
+          <a
+            href="#services"
+            className="inline-block bg-color-accent text-white px-6 py-3 rounded-lg font-semibold hover:bg-red-700 transition"
+          >
+            Conocé nuestros servicios
+          </a>
+        </div>
 
-      {/* Contenido del Hero */}
-      <div className="relative z-20 max-w-3xl text-center text-white px-6">
-        <h1 className="text-4xl md:text-5xl font-bold mb-6">
-          Desarrollo de software a medida
-        </h1>
-        <p className="text-lg md:text-xl opacity-90 mb-8">
-          Soluciones digitales pensadas para escalar, mantener y crecer.
-        </p>
-        <a
-          href="#services"
-          className="inline-block bg-white text-black px-8 py-4 rounded-lg font-semibold hover:opacity-90 transition"
-        >
-          Hablemos
-        </a>
+        {/* Imagen Derecha */}
+        <div className="flex-1 flex justify-center md:justify-end">
+          <div className="w-full max-w-md">
+            <Image
+              src="/Ingeniero.svg"
+              alt="Ilustración de software"
+              width={600}
+              height={400}
+              className="rounded-xl shadow-lg"
+            />
+          </div>
+        </div>
+
       </div>
     </section>
   );

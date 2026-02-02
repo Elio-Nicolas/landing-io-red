@@ -1,22 +1,27 @@
 export default function HowWeWork() {
   return (
-     <section
+    <section
       id="value-proposition"
-      className="w-full py-20 px-6 bg-[var(--color-primary)] text-white"
+      className="w-full py-24 px-6 bg-[var(--brand-muted)] text-white"
     >
       <div className="max-w-6xl mx-auto">
-        {/* Título */}
-        <div className="text-center mb-16">
-    <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
-      Cómo trabajamos
-    </h2>
-    <p className="text-lg md:text-xl text-slate-200 max-w-3xl mx-auto">
-      Transformamos ideas en soluciones digitales de calidad, escalables y fáciles de mantener.
-    </p>
-  </div>
 
-        {/* Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+        {/* Header */}
+        <div className="mb-20 max-w-3xl">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            Cómo trabajamos
+          </h2>
+          <p className="text-lg md:text-xl text-slate-200">
+            Transformamos ideas en soluciones digitales de calidad, escalables y fáciles de mantener.
+          </p>
+        </div>
+
+        {/* Timeline */}
+        <div className="relative space-y-16">
+
+          {/* Línea animada */}
+          <div className="absolute left-6 top-0 h-full w-px bg-white/20 hidden md:block animate-line-grow" />
+
           {[
             {
               step: "01",
@@ -33,12 +38,27 @@ export default function HowWeWork() {
               title: "Entrega y soporte",
               text: "Entregamos software listo para producción y acompañamos su crecimiento.",
             },
-          ].map((item) => (
+          ].map((item, index) => (
             <div
               key={item.step}
-              className="bg-white rounded-2xl p-10 shadow-md hover:shadow-xl transition"
+              style={{ animationDelay: `${index * 180}ms` }}
+              className={`
+                relative
+                bg-white
+                rounded-2xl
+                p-10
+                shadow-md
+                md:pl-20
+                opacity-0
+                animate-card-in
+                ${index % 2 === 0 ? "md:animate-slide-left" : "md:animate-slide-right"}
+              `}
             >
-              <div className="text-sm font-semibold text-[var(--brand-accent)] mb-4">
+              {/* Punto */}
+              <div className="hidden md:block absolute left-4 top-10 w-4 h-4 rounded-full bg-[var(--brand-accent)]" />
+
+              {/* Número */}
+              <div className="text-5xl font-bold text-[var(--brand-accent)]/20 mb-4">
                 {item.step}
               </div>
 
@@ -46,12 +66,13 @@ export default function HowWeWork() {
                 {item.title}
               </h3>
 
-              <p className="text-[var(--brand-muted)] leading-relaxed">
+              <p className="text-[var(--brand-muted)] leading-relaxed max-w-xl">
                 {item.text}
               </p>
             </div>
           ))}
         </div>
+
       </div>
     </section>
   );

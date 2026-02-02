@@ -1,10 +1,32 @@
-export default function Header() {
-  return (
-    <header className="w-full border-b">
-      <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-        <span className="font-bold text-lg">IO Red</span>
+"use client"; // Necesario para usar useState y useEffect
+import { useState, useEffect } from "react";
 
-        <nav className="space-x-6 text-sm">
+export default function Header() {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  return (
+    <header
+      className={`w-full fixed top-0 left-0 z-50 transition-shadow duration-300 font-sans ${
+        scrolled ? "shadow-md" : ""
+      }`}
+      style={{ backgroundColor: "#0A2540" }} // fondo original
+    >
+      <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+        <span className="font-bold text-lg text-foreground">IO Red</span>
+
+        <nav className="space-x-6 text-sm text-foreground">
           <a href="#services" className="hover:underline">
             Servicios
           </a>
