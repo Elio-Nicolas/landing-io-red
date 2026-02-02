@@ -10,17 +10,34 @@ export default function Services() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           
-          {/* Card 1: Desarrollo a medida */}
-          <div className="bg-white rounded-xl p-8 border border-slate-200 shadow-sm transition-shadow hover:shadow-md">
-            {/* Aquí podrías poner otra imagen similar en el futuro */}
-            <div className="w-12 h-12 mb-6 rounded-md bg-slate-100" />
-            <h3 className="text-xl font-semibold text-slate-900 mb-3">
-              Desarrollo a medida
-            </h3>
-            <p className="text-slate-700 leading-relaxed">
-              Aplicaciones web y móviles diseñadas para escalar, con visión en el negocio.
-            </p>
-          </div>
+       {/* Card 1: Desarrollo a medida */}
+<div className="bg-white rounded-xl p-8 border border-slate-200 shadow-sm transition-shadow hover:shadow-md flex flex-col md:flex-row items-center gap-6">
+  
+  {/* Texto a la derecha */}
+  <div className="flex-1 text-center md:text-left">
+    <h3 className="text-xl font-semibold text-slate-900 mb-3">
+      Desarrollo a medida
+    </h3>
+    <p className="text-slate-700 leading-relaxed">
+      Aplicaciones web y móviles diseñadas para escalar, con visión en el negocio.
+    </p>
+  </div>
+  
+  {/* Imagen SVG a la izquierda */}
+  <div className="flex-shrink-0 w-32 h-32 flex items-center justify-center bg-white rounded-xl shadow-inner">
+    <Image
+      src="/mobile.svg"
+      alt="Desarrollo a medida"
+      width={180}   // 128px para que se vea grande
+      height={180}
+      className="object-contain"
+    />
+  </div>
+
+  
+
+</div>
+
 
           {/* Card 2: Arquitectura & Backend (CON IMAGEN INTEGRADA) */}
           <div className="bg-white rounded-xl p-8 border border-slate-200 shadow-sm transition-shadow hover:shadow-md">
