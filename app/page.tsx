@@ -6,6 +6,7 @@ import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
 
 import type { Metadata } from "next";
+import HowWeWork from "@/components/HowWeWork";
 
 export const metadata: Metadata = {
   title: "Desarrollo de Software a Medida",
@@ -19,6 +20,7 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
+        <HowWeWork/>
         <Services />
         <ValueProposition />
         <CTA />

@@ -1,41 +1,58 @@
+"use client";
+
+import Link from "next/link";
+
 export default function CTA() {
   return (
-    <section
-      id="contact"
-      className="py-28 bg-gradient-to-r from-blue-600 to-blue-700 text-white"
-    >
-      <div className="max-w-4xl mx-auto px-4 text-center">
+    <section className="relative py-28 bg-[#1f1f1f] border-t border-white/10">
+      <div className="max-w-6xl mx-auto px-6 text-center">
         
-        <h2 className="text-3xl md:text-4xl font-bold">
-          ¿Tenés un proyecto en mente?
+        <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+          ¿Listo para llevar tu proyecto al siguiente nivel?
         </h2>
 
-        <p className="mt-6 text-lg text-blue-100">
-          Contanos tu idea y veamos juntos cómo convertirla en una solución
-          tecnológica sólida y escalable.
+        <p className="text-lg md:text-xl text-white/70 max-w-2xl mx-auto mb-12">
+          Construimos productos digitales sólidos, escalables y pensados para crecer.
         </p>
 
-        <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
-          <a
-            href="mailto:contacto@iored.com"
-            className="px-8 py-4 bg-white text-blue-700 font-semibold rounded-xl hover:bg-blue-100 transition"
-          >
-            Escribinos por email
-          </a>
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+          
+          {/* Botón primario - WhatsApp */}
+          <button
+  onClick={() =>
+    window.open("https://wa.me/5492657659689", "_blank")
+  }
+  className="
+    px-10 py-5 rounded-xl
+    bg-white text-black text-lg font-semibold
+    transition-all duration-200 ease-out
+    hover:bg-white/90
+    hover:scale-[1.03]
+    hover:-translate-y-1
+  "
+>
+  Contactanos
+</button>
 
-          <a
-            href="https://wa.me/5492657659689"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-8 py-4 border border-white font-semibold rounded-xl hover:bg-white hover:text-blue-700 transition"
-          >
-            WhatsApp
-          </a>
+
+          {/* Botón secundario - Servicios */}
+          <Link
+  href="#services"
+  className="
+    px-10 py-5 rounded-xl
+    border border-white/40 text-white text-lg font-semibold
+    transition-all duration-200 ease-out
+    hover:bg-white/10
+    hover:scale-[1.03]
+    hover:-translate-y-1
+  "
+>
+  Ver servicios
+</Link>
+
+
         </div>
 
-        <p className="mt-8 text-sm text-blue-200">
-          Primera charla sin costo · Respuesta en menos de 24hs
-        </p>
       </div>
     </section>
   );

@@ -1,57 +1,51 @@
-const values = [
-  {
-    title: "Desarrollo a medida",
-    description:
-      "Cada proyecto se diseña según tus objetivos reales. No usamos plantillas ni soluciones genéricas.",
-  },
-  {
-    title: "Enfoque en negocio",
-    description:
-      "La tecnología es un medio. Nos enfocamos en resolver problemas y generar valor concreto.",
-  },
-  {
-    title: "Comunicación clara",
-    description:
-      "Hablamos en términos simples, con seguimiento constante y sin sorpresas.",
-  },
-  {
-    title: "Escalabilidad y calidad",
-    description:
-      "Construimos soluciones preparadas para crecer, con buenas prácticas y código mantenible.",
-  },
-];
-
 export default function ValueProposition() {
   return (
-    <section className="py-24 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4">
-        
-        {/* Header */}
-        <div className="max-w-2xl">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
-            ¿Por qué elegirnos?
+    <section className="w-full bg-white py-24 border-t border-slate-300">
+      <div className="max-w-6xl mx-auto px-6">
+        {/* Título */}
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-slate-900">
+            Propuesta de valor
           </h2>
-          <p className="mt-4 text-gray-600">
-            Trabajamos como socios tecnológicos, no solo como proveedores.
+          <p className="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto">
+            No solo desarrollamos software. Construimos soluciones pensadas para durar y crecer.
           </p>
         </div>
 
-        {/* Grid */}
-        <div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-          {values.map((item, index) => (
-            <div
-              key={index}
-              className="p-6 bg-white rounded-2xl border border-gray-200"
-            >
-              <h3 className="font-semibold text-gray-900">
-                {item.title}
-              </h3>
+        {/* Valores */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+          {/* Item 1 */}
+          <div className="p-10 rounded-xl border border-slate-200 bg-slate-50">
+            <h3 className="text-xl font-semibold text-slate-900 mb-3">
+              Pensado para escalar
+            </h3>
+            <p className="text-slate-700 leading-relaxed">
+              Diseñamos sistemas preparados para crecer desde el primer día,
+              evitando retrabajos y deuda técnica innecesaria.
+            </p>
+          </div>
 
-              <p className="mt-3 text-sm text-gray-600">
-                {item.description}
-              </p>
-            </div>
-          ))}
+          {/* Item 2 */}
+          <div className="p-10 rounded-xl border border-slate-200 bg-slate-50">
+            <h3 className="text-xl font-semibold text-slate-900 mb-3">
+              Código claro y mantenible
+            </h3>
+            <p className="text-slate-700 leading-relaxed">
+              Priorizamos la calidad del código para que cualquier equipo pueda
+              entenderlo, mantenerlo y evolucionarlo.
+            </p>
+          </div>
+
+          {/* Item 3 */}
+          <div className="p-10 rounded-xl border border-slate-200 bg-slate-50">
+            <h3 className="text-xl font-semibold text-slate-900 mb-3">
+              Enfoque en negocio
+            </h3>
+            <p className="text-slate-700 leading-relaxed">
+              Cada decisión técnica está alineada con objetivos reales:
+              rendimiento, costos y resultados.
+            </p>
+          </div>
         </div>
       </div>
     </section>

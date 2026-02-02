@@ -8,7 +8,13 @@ export default function Header() {
           <a href="#services" className="hover:underline">
             Servicios
           </a>
-          <a href="#contact" className="hover:underline">
+
+          <a
+            href="https://wa.me/5492657659689"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:underline"
+          >
             Contacto
           </a>
         </nav>

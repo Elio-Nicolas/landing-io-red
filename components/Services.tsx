@@ -1,53 +1,48 @@
-const services = [
-  {
-    title: "Desarrollo Web",
-    description:
-      "Aplicaciones web modernas, rápidas y escalables, adaptadas a las necesidades reales de tu negocio.",
-  },
-  {
-    title: "Software a Medida",
-    description:
-      "Diseñamos y construimos soluciones personalizadas que se integran con tus procesos y sistemas existentes.",
-  },
-  {
-    title: "Integraciones & APIs",
-    description:
-      "Conectamos plataformas, automatizamos flujos y desarrollamos APIs seguras y eficientes.",
-  },
-];
-
 export default function Services() {
   return (
-    <section id="services" className="py-24 bg-white">
-      <div className="max-w-7xl mx-auto px-4">
-        
-        {/* Título */}
-        <div className="max-w-2xl">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
-            Nuestros servicios
-          </h2>
-          <p className="mt-4 text-gray-600">
-            Soluciones tecnológicas pensadas para escalar y generar impacto real
-            en tu negocio.
-          </p>
-        </div>
+    <section  id="services" className="w-full bg-slate-200 py-24 border-t border-b border-slate-300">
 
-        {/* Cards */}
-        <div className="mt-16 grid gap-8 md:grid-cols-3">
-          {services.map((service, index) => (
-            <div
-              key={index}
-              className="p-8 border border-gray-200 rounded-2xl hover:shadow-lg transition"
-            >
-              <h3 className="text-xl font-semibold text-gray-900">
-                {service.title}
-              </h3>
+      <div className="max-w-6xl mx-auto px-6">
+        <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-14">
+          Servicios
+        </h2>
 
-              <p className="mt-4 text-gray-600">
-                {service.description}
-              </p>
-            </div>
-          ))}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {/* Card 1 */}
+          <div className="bg-white rounded-xl p-8 border border-slate-200 shadow-sm">
+            <div className="w-12 h-12 mb-6 rounded-md bg-slate-100" />
+            <h3 className="text-xl font-semibold text-slate-900 mb-3">
+              Desarrollo a medida
+            </h3>
+            <p className="text-slate-700 leading-relaxed">
+              Aplicaciones web y móviles pensadas para escalar, con foco en
+              mantenibilidad y negocio.
+            </p>
+          </div>
+
+          {/* Card 2 */}
+          <div className="bg-white rounded-xl p-8 border border-slate-200 shadow-sm">
+            <div className="w-12 h-12 mb-6 rounded-md bg-slate-100" />
+            <h3 className="text-xl font-semibold text-slate-900 mb-3">
+              Arquitectura & Backend
+            </h3>
+            <p className="text-slate-700 leading-relaxed">
+              APIs, bases de datos y estructuras sólidas que soportan crecimiento
+              real, no demos.
+            </p>
+          </div>
+
+          {/* Card 3 */}
+          <div className="bg-white rounded-xl p-8 border border-slate-200 shadow-sm">
+            <div className="w-12 h-12 mb-6 rounded-md bg-slate-100" />
+            <h3 className="text-xl font-semibold text-slate-900 mb-3">
+              UX & Producto
+            </h3>
+            <p className="text-slate-700 leading-relaxed">
+              Diseño funcional, claro y usable. Menos ruido visual, más foco en
+              el usuario.
+            </p>
+          </div>
         </div>
       </div>
     </section>
