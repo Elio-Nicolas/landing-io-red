@@ -7,12 +7,13 @@
   --font-sans: 'Poppins', sans-serif;
 }
 
-/* 3️⃣ Variables de color y diseño (lo que ya tenías) */
+/* 3️⃣ Variables de color y diseño */
 :root {
   --background: #F8FAFC;   /* Fondo general IO Red */
   --foreground: #0F172A;   /* Texto principal IO Red */
   --color-primary: #0A2540; /* Azul profundo */
   --color-accent: #E11D48;  /* Rojo IO */
+  --color-cta: #38BDF8;
 }
 
 @theme inline {

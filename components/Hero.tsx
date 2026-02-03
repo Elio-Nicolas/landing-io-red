@@ -15,15 +15,24 @@ export default function Hero() {
             Creamos aplicaciones web y software a medida para empresas que buscan soluciones tecnológicas sólidas y escalables.  
             Potenciá tu negocio con nuestra experiencia en desarrollo full stack.
           </p>
-          <a
-            href="#services"
-            className="inline-block bg-color-accent text-white px-6 py-3 rounded-lg font-semibold hover:bg-red-700 transition"
-          >
-            Conocé nuestros servicios
-          </a>
+         <a
+  href="#services"
+  className="
+    inline-block
+    bg-[var(--color-cta)]
+    text-[#0A2540]
+    px-6 py-3
+    rounded-lg
+    font-semibold
+    hover:bg-[#0EA5E9]
+    transition
+  "
+>
+  Conocé nuestros servicios
+</a>
+
         </div>
 
-        {/* Imagen Derecha */}
         <div className="flex-1 flex justify-center md:justify-end">
           <div className="w-full max-w-md">
             <Image
