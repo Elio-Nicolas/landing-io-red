@@ -120,7 +120,7 @@ export default function Bot() {
             </a>
 
             <a
-              href="mailto:contacto@iored.dev"
+              href="https://wa.me/5492657659689"
               className="
                 block w-full text-left
                 px-4 py-3 rounded-lg
@@ -132,7 +132,7 @@ export default function Bot() {
               "
             >
               <div className="font-semibold">
-                📩 Contacto directo
+                📱 Contacto directo
               </div>
               <div className="text-sm opacity-80">
                 Respondemos rápido
