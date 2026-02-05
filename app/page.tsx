@@ -4,6 +4,7 @@ import Services from "@/components/Services";
 import ValueProposition from "@/components/ValueProposition";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
+import Projects from "@/components/Projects";
 
 import type { Metadata } from "next";
 import HowWeWork from "@/components/HowWeWork";
@@ -22,6 +23,7 @@ export default function Home() {
         <Hero />
         <HowWeWork/>
         <Services />
+        <Projects />
         <ValueProposition />
         <CTA />
       </main>
