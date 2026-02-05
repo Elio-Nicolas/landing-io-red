@@ -24,7 +24,7 @@ export default function ValueProposition() {
             <div className="flex flex-col items-center text-center">
               
               <Image
-                src="/escalar.svg"   // IMAGEN
+                src="/enfocado.svg"   // IMAGEN
                 alt="Pensado para escalar"
                 width={140}
                 height={140}
@@ -73,7 +73,7 @@ export default function ValueProposition() {
               
               {/* IMAGEN → elegís vos */}
               <Image
-                src="/enfocado.svg"   // ← CAMBIAR IMAGEN
+                src="/escalar.svg"   // ← CAMBIAR IMAGEN
                 alt="Enfoque en negocio"
                 width={140}
                 height={140}
