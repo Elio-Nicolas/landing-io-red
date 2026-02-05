@@ -10,13 +10,7 @@ export const metadata: Metadata = {
   description:
     "Desarrollamos software a medida para empresas y startups. Aplicaciones web escalables, integraciones y soluciones tecnológicas pensadas para crecer.",
   metadataBase: new URL("https://www.iored.com"),
-  icons: {
-  icon: [
-    { url: "/icon.png", type: "image/png", sizes: "32x32" },
-    { url: "/icon.png", type: "image/png", sizes: "16x16" },
-  ],
-
-  },
+  
   openGraph: {
     title: "IO Red | Desarrollo de Software a Medida",
     description:
