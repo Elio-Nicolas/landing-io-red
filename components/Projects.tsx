@@ -31,31 +31,33 @@ export default function Projects() {
           Proyectos & MVP
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-          {/* ================= MiBus ================= */}
-          <div className="bg-white rounded-xl p-8 border border-slate-200 shadow-sm hover:shadow-md transition flex flex-col gap-6">
-            <button
-              onClick={() => {
-                setOpen(true);
-                setCurrent(0);
-              }}
-              className="relative w-full h-56 rounded-lg overflow-hidden
-               bg-white
-               rounded-xl
-               border
-               border-slate-200
-               shadow-sm
-               hover:shadow-md
-               transition
-               cursor-pointer"
-            >
-              <Image
-                src="/MiBus-1.png"
-                alt="MiBus App"
-                fill
-                className="object-contain md:object-cover"
-              />
-            </button>
+       <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+  {/* ================= MiBus ================= */}
+  <div className="bg-white rounded-xl p-8 border border-slate-200 shadow-sm hover:shadow-md transition flex flex-col gap-6">
+    <button
+      onClick={() => {
+        setOpen(true);
+        setCurrent(0);
+      }}
+      className="relative w-full h-56 overflow-hidden
+        bg-white
+        rounded-xl
+        border
+        border-slate-200
+        shadow-sm
+        hover:shadow-md
+        transition
+        cursor-pointer"
+    >
+      <Image
+        src="/MiBus-1.png"
+        alt="MiBus App"
+        fill
+        sizes="(max-width: 768px) 100vw, 50vw"
+        className="object-contain md:object-cover"
+      />
+    </button>
+
 
             <div>
               <h3 className="text-xl font-semibold text-slate-900 mb-2">
@@ -110,14 +112,26 @@ export default function Projects() {
               ✕
             </button>
 
-            {/* Slider */}
-            <div className="relative w-full h-[70vh] bg-black">
-              <Image
-                src={mibusImages[current]}
-                alt="MiBus detalle"
-                fill
-                className="rounded-lg cursor-pointer select-none transition-transform duration-300 hover:scale-[1.01]"
-              />
+           {/* Slider */}
+<div className="relative w-full h-[70vh] max-h-[500px] bg-black overflow-hidden">
+  <Image
+    src={mibusImages[current]}
+    alt="MiBus detalle"
+    fill
+    sizes="(max-width: 768px) 100vw, 80vw"
+    className="
+      rounded-lg
+      cursor-pointer
+      select-none
+      object-contain
+      md:object-cover
+      transition-transform
+      duration-300
+      hover:scale-[1.01]
+    "
+  />
+
+
 
               {/* Flechas */}
               <button
