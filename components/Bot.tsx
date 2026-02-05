@@ -9,7 +9,6 @@ export default function Bot() {
     <>
       {/* Botón flotante */}
      
-  return (
     <button
       onClick={() => setOpen(!open)}
       className="
@@ -113,7 +112,7 @@ export default function Bot() {
               "
             >
               <div className="font-medium text-slate-900">
-                🚌 Ver proyecto MiBus
+                ⭐ Ver proyectoS & MVP
               </div>
               <div className="text-sm text-slate-600">
                 Geolocalización en tiempo real
