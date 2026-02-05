@@ -53,7 +53,7 @@ export default function Projects() {
                 src="/MiBus-1.png"
                 alt="MiBus App"
                 fill
-                className="object-cover"
+                className="object-contain md:object-cover"
               />
             </button>
 
@@ -100,7 +100,8 @@ export default function Projects() {
       {/* ================= MODAL CON SLIDER ================= */}
       {open && (
         <div className="fixed inset-0 z-50 bg-black/70 flex items-center justify-center px-4">
-          <div className="relative bg-white w-full max-w-5xl rounded-xl overflow-hidden">
+          <div className="relative w-full h-[60vh] md:h-[70vh] max-h-[500px] overflow-hidden">
+
             {/* Cerrar */}
             <button
               onClick={() => setOpen(false)}
