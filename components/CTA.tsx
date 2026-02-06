@@ -53,19 +53,23 @@ className="
       Contacto
     </button>
 
-    {openContact && (
+   {openContact && (
   <div
     className={`
-      absolute top-1/2 left-full ml-4
-      -translate-y-1/2
+      absolute
+      top-full left-1/2
+      -translate-x-1/2 mt-4
       w-56
       rounded-xl
       border border-white/20
       bg-[#0A2540]
       shadow-xl
       transition-all duration-300 ease-out
-      ${openContact ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-2"}
-    `}
+
+      md:top-1/2 md:left-full md:mt-0 md:ml-4
+      md:-translate-y-1/2 md:translate-x-0
+
+      ${openContact ? "opacity-100" : "opacity-0"} `}
   >
     <a
       href="https://wa.me/5492657659689"
