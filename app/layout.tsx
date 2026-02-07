@@ -1,6 +1,11 @@
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/react";
 import type { Metadata } from "next";
 import Bot from "@/components/Bot";
+
+
+
+
 
 export const metadata: Metadata = {
   title: {
@@ -31,6 +36,7 @@ export default function RootLayout({
     <html lang="es">
       <body className="antialiased bg-white text-gray-900">
         {children}
+        <Analytics />
         <Bot />
       </body>
     </html>
