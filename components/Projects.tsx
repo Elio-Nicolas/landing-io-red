@@ -7,10 +7,10 @@ const mibusImages = [
   "/MiBus-1.png",
   "/MiBus-4.png",
   "/MiBus-5.png",
-  "/MiBus-6.jpeg",
-  "/MiBus-7.jpeg",
-  "/MiBus-8.jpeg",
-  "/MiBus-9.jpeg"
+  "/MiBus-6.png",
+  "/MiBus-7.png",
+  "/MiBus-8.png",
+  "/MiBus-9.png"
 ];
 
 export default function Projects() {
