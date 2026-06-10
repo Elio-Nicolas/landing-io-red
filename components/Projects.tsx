@@ -125,7 +125,7 @@ export default function Projects() {
     className="object-contain rounded-3xl"
   />
 
-
+</div>
 
               {/* Flechas */}
               <button
@@ -141,7 +141,7 @@ export default function Projects() {
               >
                 ›
               </button>
-            </div>
+            
 
             {/* Texto */}
             <div className="p-6">
