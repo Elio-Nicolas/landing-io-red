@@ -117,7 +117,7 @@ export default function Projects() {
             </button>
 
            {/* Slider */}
-<div className="relative w-[720px] h-[1600px] mx-auto">
+<div className="relative w-[300px] h-[800px] mx-auto">
   <Image
     src={mibusImages[current]}
     alt="MiBus detalle"
