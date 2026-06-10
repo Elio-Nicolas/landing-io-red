@@ -117,22 +117,12 @@ export default function Projects() {
             </button>
 
            {/* Slider */}
-<div className="relative w-full h-[70vh] max-h-[500px] bg-black overflow-hidden">
+<div className="relative w-[300px] h-[600px] mx-auto">
   <Image
     src={mibusImages[current]}
     alt="MiBus detalle"
     fill
-    sizes="(max-width: 768px) 100vw, 80vw"
-    className="
-      rounded-lg
-      cursor-pointer
-      select-none
-      object-contain
-      md:object-cover
-      transition-transform
-      duration-300
-      hover:scale-[1.01]
-    "
+    className="object-contain rounded-3xl"
   />
 
 
