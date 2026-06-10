@@ -5,12 +5,9 @@ import Image from "next/image";
 
 const mibusImages = [
   "/MiBus-1.png",
-  "/MiBus-4.png",
-  "/MiBus-5.png",
-  "/MiBus-6.png",
-  "/MiBus-7.png",
-  "/MiBus-8.png",
-  "/MiBus-9.png"
+  "/MiBus-2.png",
+  "/MiBus-3.png"
+
 ];
 
 export default function Projects() {
@@ -117,15 +114,25 @@ export default function Projects() {
             </button>
 
            {/* Slider */}
-<div className="relative w-[200px] h-[500px] mx-auto">
+<div className="relative w-full h-[70vh] max-h-[500px] bg-black overflow-hidden">
   <Image
     src={mibusImages[current]}
     alt="MiBus detalle"
     fill
-    className="object-contain rounded-3xl"
+    sizes="(max-width: 768px) 100vw, 80vw"
+    className="
+      rounded-lg
+      cursor-pointer
+      select-none
+      object-contain
+      md:object-cover
+      transition-transform
+      duration-300
+      hover:scale-[1.01]
+    "
   />
 
-</div>
+
 
               {/* Flechas */}
               <button
@@ -141,7 +148,7 @@ export default function Projects() {
               >
                 ›
               </button>
-            
+            </div>
 
             {/* Texto */}
             <div className="p-6">
