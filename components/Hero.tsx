@@ -10,7 +10,7 @@ const highlights = [
 
 export default function Hero() {
   return (
-    <section className="ior-hero relative isolate overflow-hidden bg-[#071626] px-5 pb-20 pt-32 text-white md:px-8 md:pb-28 md:pt-40">
+    <section id="top" className="ior-hero relative isolate overflow-hidden bg-[#071626] px-5 pb-20 pt-32 text-white md:px-8 md:pb-28 md:pt-40">
       <div className="ior-hero-grid pointer-events-none absolute inset-0 opacity-40" aria-hidden="true" />
       <div className="pointer-events-none absolute -right-32 -top-28 h-[28rem] w-[28rem] rounded-full bg-sky-500/15 blur-[100px]" aria-hidden="true" />
       <div className="pointer-events-none absolute -bottom-48 left-[28%] h-[30rem] w-[30rem] rounded-full bg-rose-500/10 blur-[120px]" aria-hidden="true" />
