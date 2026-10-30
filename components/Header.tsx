@@ -4,9 +4,10 @@ import { useEffect, useState } from "react";
 import { ArrowUpRight, Menu, X } from "lucide-react";
 
 const links = [
-  { href: "#services", label: "Servicios" },
   { href: "#projects", label: "Productos" },
-  { href: "#value-proposition", label: "Enfoque" },
+  { href: "#services", label: "Servicios" },
+  { href: "#process", label: "Proceso" },
+  { href: "#approach", label: "Enfoque" },
 ];
 
 export default function Header() {
