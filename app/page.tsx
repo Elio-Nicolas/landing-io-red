@@ -5,23 +5,22 @@ import ValueProposition from "@/components/ValueProposition";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
 import Projects from "@/components/Projects";
-
 import type { Metadata } from "next";
 import HowWeWork from "@/components/HowWeWork";
 
 export const metadata: Metadata = {
-  title: "Desarrollo de Software a Medida",
+  title: "Desarrollo de software a medida y productos digitales",
   description:
-    "Creamos aplicaciones web y software a medida para empresas que buscan soluciones tecnológicas sólidas y escalables.",
+    "IORed Software Arg. crea aplicaciones web, sistemas y productos digitales. Conocé MiFarma, MascotasVM y MiBus.",
 };
 
 export default function Home() {
   return (
     <>
       <Header />
-      <main className= "pt-28">
+      <main className="pt-20">
         <Hero />
-        <HowWeWork/>
+        <HowWeWork />
         <Services />
         <Projects />
         <ValueProposition />
