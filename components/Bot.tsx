@@ -10,9 +10,11 @@ export default function Bot() {
   const [open, setOpen] = useState(false);
   const [position, setPosition] = useState<Position>({ right: 24, bottom: 88 });
   const drag = useRef<DragState | null>(null);
+  const didDrag = useRef(false);
 
   const startDrag = (event: React.PointerEvent<HTMLButtonElement>) => {
     if (event.button !== 0) return;
+    didDrag.current = false;
     drag.current = {
       pointerX: event.clientX,
       pointerY: event.clientY,
@@ -24,6 +26,7 @@ export default function Bot() {
 
   const moveDrag = (event: React.PointerEvent<HTMLButtonElement>) => {
     if (!drag.current) return;
+    if (Math.abs(event.clientX - drag.current.pointerX) > 4 || Math.abs(event.clientY - drag.current.pointerY) > 4) didDrag.current = true;
     const nextRight = drag.current.right - (event.clientX - drag.current.pointerX);
     const nextBottom = drag.current.bottom - (event.clientY - drag.current.pointerY);
     setPosition({
@@ -77,7 +80,7 @@ export default function Bot() {
 
       <button
         type="button"
-        onClick={() => { if (!drag.current) setOpen((value) => !value); }}
+        onClick={() => { if (!didDrag.current) setOpen((value) => !value); didDrag.current = false; }}
         onPointerDown={startDrag}
         onPointerMove={moveDrag}
         onPointerUp={stopDrag}
