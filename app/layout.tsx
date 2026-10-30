@@ -1,7 +1,6 @@
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/react";
 import type { Metadata } from "next";
-import Bot from "@/components/Bot";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://iored.com.ar"),
@@ -34,7 +33,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="antialiased bg-white text-gray-900">
         {children}
         <Analytics />
-        <Bot />
       </body>
     </html>
   );
