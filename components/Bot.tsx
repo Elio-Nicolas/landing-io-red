@@ -8,7 +8,7 @@ type DragState = { pointerX: number; pointerY: number; right: number; bottom: nu
 
 export default function Bot() {
   const [open, setOpen] = useState(false);
-  const [position, setPosition] = useState<Position>({ right: 24, bottom: 88 });
+  const [position, setPosition] = useState<Position>({ right: 24, bottom: 24 });
   const drag = useRef<DragState | null>(null);
   const didDrag = useRef(false);
 
@@ -27,11 +27,14 @@ export default function Bot() {
   const moveDrag = (event: React.PointerEvent<HTMLButtonElement>) => {
     if (!drag.current) return;
     if (Math.abs(event.clientX - drag.current.pointerX) > 4 || Math.abs(event.clientY - drag.current.pointerY) > 4) didDrag.current = true;
+    const container = event.currentTarget.parentElement;
+    if (!container) return;
+    const bounds = container.getBoundingClientRect();
     const nextRight = drag.current.right - (event.clientX - drag.current.pointerX);
     const nextBottom = drag.current.bottom - (event.clientY - drag.current.pointerY);
     setPosition({
-      right: Math.max(8, Math.min(window.innerWidth - 64, nextRight)),
-      bottom: Math.max(8, Math.min(window.innerHeight - 64, nextBottom)),
+      right: Math.max(8, Math.min(bounds.width - 64, nextRight)),
+      bottom: Math.max(8, Math.min(bounds.height - 64, nextBottom)),
     });
   };
 
@@ -43,7 +46,7 @@ export default function Bot() {
     <>
       {open && (
         <div
-          className="fixed z-50 w-[min(320px,calc(100vw-2rem))] overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-2xl animate-fade-in"
+          className="absolute z-50 w-[min(320px,calc(100vw-2rem))] overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-2xl animate-fade-in"
           style={{ right: position.right, bottom: position.bottom + 72, maxHeight: "min(70vh, 560px)" }}
         >
           <div className="flex items-start justify-between border-b border-slate-200 bg-slate-50 px-5 py-4">
@@ -85,7 +88,7 @@ export default function Bot() {
         onPointerMove={moveDrag}
         onPointerUp={stopDrag}
         onPointerCancel={stopDrag}
-        className="fixed z-50 flex h-14 w-14 touch-none items-center justify-center rounded-full bg-[var(--color-accent)] text-white shadow-lg transition hover:scale-105 active:scale-95 cursor-grab active:cursor-grabbing"
+        className="absolute z-50 flex h-14 w-14 touch-none items-center justify-center rounded-full bg-[var(--color-accent)] text-white shadow-lg transition hover:scale-105 active:scale-95 cursor-grab active:cursor-grabbing"
         style={{ right: position.right, bottom: position.bottom }}
         aria-label={open ? "Cerrar asistente IO Red" : "Abrir asistente IO Red"}
         title="Podés arrastrar este botón para moverlo"
