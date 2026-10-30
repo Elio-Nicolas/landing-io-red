@@ -50,6 +50,8 @@ export default function Header() {
     Servicios
   </a>
 
+  <a href="#projects" className="relative transition-colors hover:text-foreground after:absolute after:left-0 after:-bottom-1 after:h-[1px] after:w-0 after:bg-current after:transition-all hover:after:w-full">Productos</a>
+
   {/* Contacto dropdown */}
   <div className="relative">
     <button
