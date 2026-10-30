@@ -88,13 +88,15 @@ export default function Bot() {
         onPointerMove={moveDrag}
         onPointerUp={stopDrag}
         onPointerCancel={stopDrag}
-        className="absolute z-50 flex h-14 w-14 touch-none items-center justify-center rounded-full bg-[var(--color-accent)] text-white shadow-lg transition hover:scale-105 active:scale-95 cursor-grab active:cursor-grabbing"
+        className="group absolute z-50 flex h-16 w-16 touch-none items-center justify-center rounded-full border border-cyan-100/70 bg-gradient-to-br from-cyan-300 via-sky-500 to-blue-700 text-white shadow-[0_0_18px_rgba(56,189,248,0.65)] transition-transform duration-300 hover:scale-110 hover:shadow-[0_0_30px_rgba(56,189,248,0.9)] active:scale-95 cursor-grab active:cursor-grabbing"
         style={{ right: position.right, bottom: position.bottom }}
         aria-label={open ? "Cerrar asistente IO Red" : "Abrir asistente IO Red"}
         title="Podés arrastrar este botón para moverlo"
       >
-        <BotIcon size={26} />
-        <span className="absolute -left-1 -top-1 flex h-5 w-5 items-center justify-center rounded-full border border-white/30 bg-[#0A2540] text-white" aria-hidden="true">
+        <span className="pointer-events-none absolute inset-[-5px] rounded-full border border-cyan-200/70 animate-ping opacity-30" aria-hidden="true" />
+        <span className="pointer-events-none absolute inset-0 overflow-hidden rounded-full" aria-hidden="true"><span className="absolute -left-8 top-0 h-full w-5 rotate-12 bg-white/50 blur-sm transition-transform duration-700 group-hover:translate-x-24" /></span>
+        <BotIcon size={29} className="relative z-10 drop-shadow-md" />
+        <span className="absolute -left-1 -top-1 flex h-5 w-5 items-center justify-center rounded-full border border-white/50 bg-[#0A2540] text-white shadow-md" aria-hidden="true">
           <Grip size={12} />
         </span>
       </button>
