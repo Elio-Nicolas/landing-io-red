@@ -46,7 +46,7 @@ export default function Bot() {
     <>
       {open && (
         <div
-          className="absolute z-50 w-[min(320px,calc(100vw-2rem))] overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-2xl animate-fade-in"
+          className="absolute z-50 flex w-[min(320px,calc(100vw-2rem))] flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-2xl animate-fade-in"
           style={{ right: position.right, bottom: position.bottom + 72, maxHeight: "min(70vh, 560px)" }}
         >
           <div className="flex items-start justify-between border-b border-slate-200 bg-slate-50 px-5 py-4">
@@ -59,7 +59,7 @@ export default function Bot() {
             </button>
           </div>
 
-          <div className="space-y-3 overflow-y-auto p-4">
+          <div className="min-h-0 flex-1 space-y-3 overflow-y-auto overscroll-contain p-4">
             <p className="mb-2 text-sm text-slate-700">¿Qué te gustaría hacer hoy?</p>
             <a href="#services" onClick={() => setOpen(false)} className="block w-full rounded-lg bg-slate-100 px-4 py-3 text-left transition hover:bg-slate-200">
               <div className="font-medium text-slate-900">Desarrollo a medida</div>
