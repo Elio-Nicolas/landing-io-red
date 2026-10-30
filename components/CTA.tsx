@@ -1,8 +1,9 @@
 import { ArrowUpRight, Mail, MessageCircle } from "lucide-react";
+import Bot from "@/components/Bot";
 
 export default function CTA() {
   return (
-    <section id="contact" className="relative overflow-hidden border-t border-white/10 bg-[#071626] px-5 py-24 text-white md:px-8 md:py-28">
+    <section id="contact" className="relative overflow-hidden border-t border-white/10 bg-[#071626] px-5 pt-24 pb-36 text-white md:px-8 md:pt-28 md:pb-36">
       <div className="pointer-events-none absolute -right-24 -top-32 h-96 w-96 rounded-full bg-rose-500/10 blur-[100px]" aria-hidden="true" />
       <div className="pointer-events-none absolute -bottom-40 left-1/4 h-96 w-96 rounded-full bg-sky-500/10 blur-[110px]" aria-hidden="true" />
       <div className="relative mx-auto max-w-4xl text-center">
@@ -23,6 +24,7 @@ export default function CTA() {
         </div>
         <p className="mt-6 text-xs text-slate-500">Contacto directo · Desarrollo a medida · Productos digitales</p>
       </div>
+      <Bot />
     </section>
   );
 }
