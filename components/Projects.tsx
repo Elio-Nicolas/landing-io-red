@@ -48,7 +48,7 @@ export default function Projects() {
             <div className="flex flex-col gap-5 p-7 md:p-8">
               <div className="flex flex-wrap items-center justify-between gap-3"><h3 className="text-2xl font-bold text-[#0A2540]">MascotasVM</h3><span className="rounded-full bg-sky-50 px-3 py-1 text-xs font-semibold text-sky-700">En desarrollo</span></div>
               <p className="leading-7 text-slate-600">Una plataforma comunitaria para publicar mascotas perdidas o encontradas, compartir avistamientos y ayudar a reunirlas con sus familias.</p>
-              <a href="https://github.com/Elio-Nicolas/MascotasVM" target="_blank" rel="noopener noreferrer" className="inline-flex w-fit items-center gap-2 font-bold text-[#0A2540] transition hover:gap-3 hover:text-[#E11D48]">Conocer el proyecto <ArrowUpRight size={18} /></a>
+              <a href="/mascotasvm" className="inline-flex w-fit items-center gap-2 font-bold text-[#0A2540] transition hover:gap-3 hover:text-[#E11D48]">Conocer el proyecto <ArrowUpRight size={18} /></a>
             </div>
           </article>
 
