@@ -1,90 +1,60 @@
 "use client";
-import { useState, useEffect } from "react";
+
+import { useEffect, useState } from "react";
+import { ArrowUpRight, Menu, X } from "lucide-react";
+
+const links = [
+  { href: "#projects", label: "Productos" },
+  { href: "#services", label: "Servicios" },
+  { href: "#process", label: "Proceso" },
+  { href: "#approach", label: "Enfoque" },
+];
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
-  const [openContact, setOpenContact] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    const update = () => setScrolled(window.scrollY > 24);
+    update();
+    window.addEventListener("scroll", update, { passive: true });
+    return () => window.removeEventListener("scroll", update);
   }, []);
 
   return (
-    <header
-      className={`w-full fixed top-0 left-0 z-50 transition-shadow duration-300 backdrop-blur-md ${
-        scrolled ? "shadow-md bg-[rgba(10,37,64,0.9)]" : "bg-[rgba(10,37,64,0.6)]"
-      }`}
-    >
-      <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-        
-        {/* Logo / Nombre con subtítulo centrado */}
-       <div className="flex flex-col items-center md:items-start animate-fade-in">
-  <span className="font-bold text-2xl md:text-3xl text-foreground/90 font-sans relative overflow-hidden">
-  <span className="relative z-10">IO Red</span>
-  <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent animate-shine" />
-</span>
-
- <span className="text-sm md:text-base text-foreground/80 font-sans text-center animate-pulse-soft">
-  Software
-</span>
-
-</div>
-
-
-        {/* Navegación */}
-    <nav className="flex items-center space-x-8 text-foreground/80 text-sm md:text-base font-medium tracking-wide relative">
-  
-  {/* Servicios */}
-  <a
-    href="#services"
-    className="relative transition-colors hover:text-foreground after:absolute after:left-0 after:-bottom-1 after:h-[1px] after:w-0 after:bg-current after:transition-all hover:after:w-full"
-  >
-    Servicios
-  </a>
-
-  {/* Contacto dropdown */}
-  <div className="relative">
-    <button
-      onClick={() => setOpenContact(!openContact)}
-      className="relative transition-colors hover:text-foreground after:absolute after:left-0 after:-bottom-1 after:h-[1px] after:w-0 after:bg-current after:transition-all hover:after:w-full"
-    >
-      Contacto
-    </button>
-
-    {openContact && (
-      <div className="absolute right-0 mt-3 w-44 rounded-xl bg-[#0A2540] border border-white/10 shadow-lg backdrop-blur-md">
-        
-        <a
-          href="https://wa.me/5492657659689"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="block px-4 py-3 text-sm hover:bg-white/10 transition"
-        >
-          📱 WhatsApp
+    <header className={`fixed left-0 top-0 z-50 w-full border-b border-white/10 text-white backdrop-blur-xl transition-colors duration-300 ${
+      scrolled ? "bg-[#071626]/95 shadow-lg shadow-black/10" : "bg-[#071626]/80"
+    }`}>
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 md:px-8">
+        <a href="#top" className="group flex items-center gap-3" aria-label="IORed, inicio" onClick={() => setMenuOpen(false)}>
+          <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-rose-500 to-rose-700 text-sm font-extrabold tracking-tight shadow-lg shadow-rose-950/30">IO</span>
+          <span className="flex flex-col leading-none">
+            <span className="text-lg font-bold tracking-tight sm:text-xl">IORed</span>
+            <span className="mt-1 text-[10px] font-semibold tracking-[0.22em] text-slate-400">SOFTWARE ARG.</span>
+          </span>
         </a>
-
-        <a
-          href="https://mail.google.com/mail/?view=cm&fs=1&to=baigorriaen83@gmail.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="block px-4 py-3 text-sm hover:bg-white/10 transition"
-        >
-          ✉️ Email
-        </a>
+        <nav className="hidden items-center gap-8 md:flex" aria-label="Navegación principal">
+          {links.map((link) => (
+            <a key={link.href} href={link.href} className="text-sm font-medium text-slate-300 transition hover:text-white">{link.label}</a>
+          ))}
+          <a href="#contact" className="inline-flex items-center gap-2 rounded-lg bg-white px-4 py-2.5 text-sm font-semibold text-[#0A2540] transition hover:bg-sky-100">
+            Hablemos <ArrowUpRight size={16} />
+          </a>
+        </nav>
+        <button type="button" className="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-white/15 text-white transition hover:bg-white/10 md:hidden" aria-label={menuOpen ? "Cerrar menú" : "Abrir menú"} aria-expanded={menuOpen} onClick={() => setMenuOpen((open) => !open)}>
+          {menuOpen ? <X size={21} /> : <Menu size={21} />}
+        </button>
       </div>
-    )}
-  </div>
-</nav>
-
-      </div>
+      {menuOpen && (
+        <nav className="border-t border-white/10 bg-[#071626] px-5 py-4 md:hidden" aria-label="Navegación móvil">
+          <div className="mx-auto flex max-w-7xl flex-col gap-1">
+            {links.map((link) => (
+              <a key={link.href} href={link.href} onClick={() => setMenuOpen(false)} className="rounded-lg px-3 py-3 text-sm font-medium text-slate-200 transition hover:bg-white/5">{link.label}</a>
+            ))}
+            <a href="#contact" onClick={() => setMenuOpen(false)} className="mt-2 flex items-center justify-center gap-2 rounded-lg bg-[#E11D48] px-4 py-3 text-sm font-semibold text-white">Hablemos <ArrowUpRight size={16} /></a>
+          </div>
+        </nav>
+      )}
     </header>
   );
 }
