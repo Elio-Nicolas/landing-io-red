@@ -1,97 +1,27 @@
-"use client";
-import { useState, useEffect } from "react";
-import Link from "next/link";
+import { ArrowUpRight, Mail, MessageCircle } from "lucide-react";
 
 export default function CTA() {
-    const [openContact, setOpenContact] = useState(false);
   return (
-    <section className="relative py-28 bg-[#1f1f1f] border-t border-white/10">
-      <div className="max-w-6xl mx-auto px-6 text-center">
-        
-        <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-          ¿Listo para llevar tu proyecto al siguiente nivel?
+    <section id="contact" className="relative overflow-hidden border-t border-white/10 bg-[#071626] px-5 py-24 text-white md:px-8 md:py-28">
+      <div className="pointer-events-none absolute -right-24 -top-32 h-96 w-96 rounded-full bg-rose-500/10 blur-[100px]" aria-hidden="true" />
+      <div className="pointer-events-none absolute -bottom-40 left-1/4 h-96 w-96 rounded-full bg-sky-500/10 blur-[110px]" aria-hidden="true" />
+      <div className="relative mx-auto max-w-4xl text-center">
+        <span className="text-xs font-bold uppercase tracking-[0.22em] text-rose-300">¿Tenés una idea?</span>
+        <h2 className="mt-5 text-3xl font-semibold tracking-tight sm:text-4xl md:text-5xl">
+          Hagamos que se convierta en algo real.
         </h2>
-
-        <p className="text-lg md:text-xl text-white/70 max-w-2xl mx-auto mb-12">
-          Construimos productos digitales sólidos, escalables y pensados para crecer.
+        <p className="mx-auto mt-6 max-w-2xl text-base leading-8 text-slate-300 sm:text-lg">
+          Contame qué necesitás resolver. Podemos conversar sobre una aplicación, un sistema o una idea de producto digital.
         </p>
-
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-          
-          {/* Botón primario - WhatsApp */}
-
-  {/* Contacto dropdown */}
- <nav className="flex items-center space-x-8 text-foreground/80 text-sm md:text-base font-medium tracking-wide relative">
-  
-  {/* Servicios */}
-  <a
-    href="#services"
-  className="
-    px-10 py-5 rounded-xl
-    border border-white/40 text-white text-lg font-semibold
-    transition-all duration-200 ease-out
-    hover:bg-white/10
-    hover:scale-[1.03]
-    hover:-translate-y-1
-  ">
-    Servicios
-  </a>
-
-  {/* Contacto dropdown */}
-  <div className="relative inline-block">
-    <button
-      onClick={() => setOpenContact(!openContact)}
-className="
-    px-10 py-5 rounded-xl
-    border border-white/40 text-white text-lg font-semibold
-    transition-all duration-200 ease-out
-    hover:bg-white/10
-    hover:scale-[1.03]
-    hover:-translate-y-1
-  "
-    >
-      Contacto
-    </button>
-
-   {openContact && (
-  <div
-    className={`
-      absolute
-      top-full left-1/2
-      -translate-x-1/2 mt-4
-      w-56
-      rounded-xl
-      border border-white/20
-      bg-[#0A2540]
-      shadow-xl
-      transition-all duration-300 ease-out
-
-      md:top-1/2 md:left-full md:mt-0 md:ml-4
-      md:-translate-y-1/2 md:translate-x-0
-
-      ${openContact ? "opacity-100" : "opacity-0"} `}
-  >
-    <a
-      href="https://wa.me/5492657659689"
-      target="_blank"
-      className="block px-4 py-3 text-white hover:bg-white/10 transition"
-    >
-      📱 WhatsApp
-    </a>
-
-    <a
-      href="https://mail.google.com/mail/?view=cm&fs=1&to=baigorriaen83@gmail.com"
-      target="_blank"
-      className="block px-4 py-3 text-white hover:bg-white/10 transition"
-    >
-      ✉️ Email
-    </a>
-  </div>
-)}
-
-           </div>
-          </nav>
+        <div className="mt-9 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center">
+          <a href="https://wa.me/5492657659689" target="_blank" rel="noopener noreferrer" className="inline-flex min-h-13 items-center justify-center gap-2 rounded-xl bg-[#E11D48] px-6 py-4 font-semibold text-white transition hover:-translate-y-0.5 hover:bg-rose-600">
+            <MessageCircle size={18} /> Escribir por WhatsApp <ArrowUpRight size={17} />
+          </a>
+          <a href="mailto:baigorriaen83@gmail.com?subject=Consulta%20sobre%20IORed" className="inline-flex min-h-13 items-center justify-center gap-2 rounded-xl border border-white/20 px-6 py-4 font-semibold text-white transition hover:border-white/40 hover:bg-white/[0.06]">
+            <Mail size={18} /> Enviar un email
+          </a>
         </div>
+        <p className="mt-6 text-xs text-slate-500">Contacto directo · Desarrollo a medida · Productos digitales</p>
       </div>
     </section>
   );
