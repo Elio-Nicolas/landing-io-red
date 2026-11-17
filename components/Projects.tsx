@@ -52,6 +52,21 @@ export default function Projects() {
             </div>
           </article>
 
+          <article className="group flex min-h-[420px] flex-col overflow-hidden rounded-[28px] border border-slate-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl">
+            <div className="relative flex min-h-56 flex-1 items-center justify-center overflow-hidden bg-gradient-to-br from-[#eaf0ff] via-[#f5f7ff] to-[#dce7ff] p-8">
+              <div className="absolute -right-10 -top-16 h-56 w-56 rounded-full border-[30px] border-white/40" />
+              <div className="relative flex items-center gap-4 rounded-3xl border border-white/80 bg-white/85 px-8 py-7 shadow-xl backdrop-blur-sm">
+                <span className="flex h-16 w-16 items-center justify-center rounded-2xl bg-[#0A2540] text-white shadow-lg"><span className="text-3xl font-extrabold">e</span></span>
+                <div><span className="block text-3xl font-extrabold tracking-tight text-[#0A2540]">ecommerceVM</span><span className="text-sm font-medium text-slate-500">Tecnología y compras online.</span></div>
+              </div>
+            </div>
+            <div className="flex flex-col gap-5 p-7 md:p-8">
+              <div className="flex flex-wrap items-center justify-between gap-3"><h3 className="text-2xl font-bold text-[#0A2540]">ecommerceVM</h3><span className="rounded-full bg-sky-50 px-3 py-1 text-xs font-semibold text-sky-700">En desarrollo</span></div>
+              <p className="leading-7 text-slate-600">Una tienda online de tecnología, accesorios y soluciones para el día a día, con catálogo, compras y gestión de pedidos.</p>
+              <a href="/ecommercevm" className="inline-flex w-fit items-center gap-2 font-bold text-[#0A2540] transition hover:gap-3 hover:text-[#E11D48]">Conocer el proyecto <ArrowUpRight size={18} /></a>
+            </div>
+          </article>
+
           <article className="group overflow-hidden rounded-[28px] border border-slate-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl lg:col-span-2">
             <div className="grid md:grid-cols-2">
               <button type="button" onClick={() => { setCurrent(0); setGalleryOpen(true); }} className="relative min-h-64 overflow-hidden bg-[#e9eff8] focus-visible:outline-2 focus-visible:outline-offset-[-4px] focus-visible:outline-[#E11D48]" aria-label="Abrir galería de MiBus">
